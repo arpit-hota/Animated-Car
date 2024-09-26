@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+    /* animation: bodyShake linear .1s infinite; */
+}
+
+.sky{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/img/background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.trees{
+    height: 75vh;
+    width: 100%;
+    background-image: url(/img/trees.png);
+    background-size: cover;
+    position: absolute;
+}
+
+.track{
+    height: 30vh;
+    width: 800vw;
+    background-image: url(/img/track.png);
+    /* background-size: cover; */
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 20s infinite;
+}
+
+.car{
+    height: 40px;
+    width: 170px;
+    background-image: url(/img/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 500px;
+    top: 64vh;
+    animation: carShake linear 5s infinite;
+}
+
+
+/*Rear Wheel*/
+.wheel1 img{
+    width: 32px;
+    position: relative;
+    top: 19.45px;
+    left: 20.6px;
+    animation: wheelRotation linear .6s infinite;
+}
+
+/*Front Wheel*/
+.wheel2 img{
+    width: 32px;
+    position: relative;
+    top: -17px;
+    left: 106.5px;
+    animation: wheelRotation linear .6s infinite;
+}
+
+
+/*To make custome animation we use @keyframes*/
+
+@keyframes wheelRotation {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMove {
+    100%{
+        transform: translate(-500vw);
+    }
+}
+
+@keyframes carShake {
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bodyShake {
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
